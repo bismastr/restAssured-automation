@@ -10,14 +10,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 public class CreateAirline {
-    private String id;
-    private String name;
-    private String country;
-    private String logo;
-    private String slogan;
-    private String head_quaters;
-    private String website;
-    private String established;
-
+    private String name = "Name Testing";
+    private String country = "Country Testing";
+    private String logo = "Logo Testing";
+    private String slogan = "Slogan Testing";
+    private String head_quaters = "Testing Quaters";
+    private String website = "Testing Website";
+    private String established = "Established Testing";
 
 }
