@@ -1,10 +1,8 @@
 package test;
 
 import RestUtils.RestUtils;
-import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
-import models.CreateAirline;
 import models.CreatePassenger;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -24,19 +22,20 @@ public class Airline {
     @Test
     public void getAirlineAll(){
         airlineServices.getAirlineAll()
-                .then().statusCode(200);
+                .then()
+                    .statusCode(200);
 
 
     }
 
-    @Test
+    @Test()
     public void getAirLineById(){
         airlineServices.getAirlineById("2")
                 .then()
-                .statusCode(200);
+                    .statusCode(200);
     }
 
-    @Test
+    @Test()
     public void createPassenger(){
         CreatePassenger body = CreatePassenger.builder()
                 .airline(2)
@@ -44,8 +43,12 @@ public class Airline {
                 .name("Testing Automation")
                 .build();
 
-        Response response = airlineServices.createPassenger(body);
-        System.out.println(response.prettyPrint());
+     Response createPg = airlineServices.createPassenger(body);
+     createPg.then().statusCode(200);
+
+     airlineServices.getAirlineById(createPg.jsonPath().getString("_id"))
+             .then()
+             .statusCode(200);
     }
 
 

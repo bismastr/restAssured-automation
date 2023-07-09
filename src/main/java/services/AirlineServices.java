@@ -4,11 +4,10 @@ import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
-import models.CreateAirline;
 import models.CreatePassenger;
 
 public class AirlineServices {
-    private RequestSpecification requestSpecification;
+    private final RequestSpecification requestSpecification;
 
     public AirlineServices(RequestSpecification requestSpecification) {
         this.requestSpecification = requestSpecification;
