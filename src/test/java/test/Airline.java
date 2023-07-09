@@ -44,7 +44,6 @@ public class Airline {
                 .name("Testing Automation")
                 .build();
 
-        System.out.println(body.getAirline());
         Response response = airlineServices.createPassenger(body);
         System.out.println(response.prettyPrint());
     }
