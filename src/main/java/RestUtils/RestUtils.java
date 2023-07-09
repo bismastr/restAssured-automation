@@ -16,7 +16,6 @@ public class RestUtils {
     }
 
     private String getToken() {
-        //This Credentials should be placed in .env not here. Placed here for Learning Project purposes
         String clientId = "0oahdhjkutaGcIK2M4x6";
         String username = "api-user4@iwt.net";
         String password = "b3z0nV0cLO";
